@@ -4,13 +4,15 @@ fun main() {
 
     val trainingDay = 5
 
-    // Определяем, какие упражнения выполнять (через день: руки/пресс на нечетные дни, ноги/спина на четные)
-    val isArmsAndAbsDay = trainingDay % 2 == 1 // Нечетные дни: руки и пресс
+    val isEven = trainingDay % MODULUS_FOR_EVEN_CHECK == REMAINDER_FOR_EVEN
 
     println(
-        "Упражнения для рук:   ${if (isArmsAndAbsDay) "true" else "false"}\n" +
-                "Упражнения для ног:   ${if (!isArmsAndAbsDay) "true" else "false"}\n" +
-                "Упражнения для спины: ${if (!isArmsAndAbsDay) "true" else "false"}\n" +
-                "Упражнения для пресса: ${if (isArmsAndAbsDay) "true" else "false"}"
+        "Упражнения для рук:   ${!isEven}\n" +
+                "Упражнения для ног:   ${isEven}\n" +
+                "Упражнения для спины: ${isEven}\n" +
+                "Упражнения для пресса: ${!isEven}"
     )
 }
+
+const val MODULUS_FOR_EVEN_CHECK = 2
+const val REMAINDER_FOR_EVEN = 0
