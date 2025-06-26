@@ -7,8 +7,11 @@ fun main() {
     val humidity: Int = 20
     val season: String = "зима"
 
-    val areConditionsFavorable = isSunny && isTentOpen && humidity == 20 && season != "зима"
+    val areConditionsFavorable = isSunny && isTentOpen && humidity == REQUIRED_HUMIDITY && season != WINTER_SEASON
 
     println("Благоприятные ли условия сейчас для роста бобовых? $areConditionsFavorable")
 
 }
+
+const val REQUIRED_HUMIDITY = 20
+const val WINTER_SEASON = "зима"
