@@ -2,13 +2,16 @@ package Lesson_5_Ex_3
 
 fun main() {
 
+    val winningNumber1 = (0..42).random()
+    val winningNumber2 = (0..42).random()
+
     println("Введите первое число (от 0 до 42):")
     val userNumber1 = readln().toInt()
     println("Введите второе число (от 0 до 42):")
     val userNumber2 = readln().toInt()
 
-    val isFirstNumberCorrect = userNumber1 == WINNING_NUMBER1 || userNumber1 == WINNING_NUMBER2
-    val isSecondNumberCorrect = userNumber2 == WINNING_NUMBER1 || userNumber2 == WINNING_NUMBER2
+    val isFirstNumberCorrect = userNumber1 == winningNumber1 || userNumber1 == winningNumber2
+    val isSecondNumberCorrect = userNumber2 == winningNumber1 || userNumber2 == winningNumber2
     val isMainPrize = isFirstNumberCorrect && isSecondNumberCorrect && userNumber1 != userNumber2
     val isConsolationPrize = (isFirstNumberCorrect || isSecondNumberCorrect) && !isMainPrize
 
@@ -18,9 +21,6 @@ fun main() {
         else -> "Неудача!"
     })
 
-    println("Правильные числа: $WINNING_NUMBER1 и $WINNING_NUMBER2")
+    println("Правильные числа: $winningNumber1 и $winningNumber2")
 
 }
-
-const val WINNING_NUMBER1 = 15
-const val WINNING_NUMBER2 = 30
