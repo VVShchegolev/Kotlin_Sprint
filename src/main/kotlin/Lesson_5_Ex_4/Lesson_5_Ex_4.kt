@@ -9,11 +9,11 @@ fun main() {
             "но вы, наверное, об этом не заботитесь. [вздыхает ещё глубже...] " +
             "Да, вперед, пожалуйста, вводите свои данные...")
     println("Введите имя пользователя:")
-    val username = readLine()!!
+    val username = readln()
 
     val message = if (username == REGISTERED_USERNAME) {
         println("Введите пароль:")
-        val password = readLine()!!
+        val password = readln()
         if (password == REGISTERED_PASSWORD) {
             "[вздыхает...] Ваши данные проверены, и о, чудо, они верны... " +
                     "Пользователь \"$username\", вам разрешено входить на борт корабля \"Heart of Gold\". " +
